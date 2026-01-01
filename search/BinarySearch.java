@@ -1,15 +1,15 @@
 class BinarySearch {
 
-    private int search(int[] array, int searchItem) {
+    private int search(int[] arr, int searchItem) {
         int left = 0;
-        int right = array.length;
+        int right = arr.length;
         int middle = (left + right) / 2;
         while (left < right) {
-            if (array[middle] == searchItem) {
+            if (arr[middle] == searchItem) {
                 return middle;
             }
             else {
-                if (array[middle] > searchItem) {
+                if (arr[middle] > searchItem) {
                     right = middle;
                 }
                 else {

@@ -1,49 +1,43 @@
 class QuickSort {
 
-    private int[] sort(int[] array, int low, int high) {
+    private void sort(int[] arr, int low, int high) {
         if (low < high) {
-            int pivot = partition(array, low, high);
-            sort(array, low, pivot - 1);
-            sort(array, pivot + 1, high);
+            int pivot = partition(arr, low, high);
+            sort(arr, low, pivot - 1);
+            sort(arr, pivot + 1, high);
         }
-        return array;
     }
 
-    private int partition(int[] array, int low, int high) {
-        int pivot = array[high];
+    private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
         int left = low;
         for(int i = low; i < high; i++) {
-            if (array[i] < pivot) {
-                swap(array, i, left);
+            if (arr[i] < pivot) {
+                swap(arr, i, left);
                 left++;
             }
         }
-        swap(array, left, high);
+        swap(arr, left, high);
         return left;
     }
 
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public static void main(String[] args) {
         QuickSort object = new QuickSort();
-        int[] array = { 12, 43, 93, 13, 23, 59, 19, 10, -16, 53, 90, 143, 28, -13, 85, 20 };
-        int[] sortedArray = object.sort(array, 0, array.length - 1);
-        for(int i = 0; i < sortedArray.length; i++) {
-            if (i == sortedArray.length - 1) {
-                System.out.println(sortedArray[i]);
-            }
-            else {
-                System.out.print(sortedArray[i] + ", ");
-            }
+        int[] arr = { 12, 43, 93, 13, 23, 59, 19, 10, -16, 53, 90, 143, 28, -13, 85, 20 };
+        object.sort(arr, 0, arr.length - 1);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + (i == arr.length - 1 ? "" : ", "));
         }
     }
 }
 
-/*
+/**
  *
     Array: 12, 43, 93, 13, 23, 59, 19, 10, -16, 53, 90, 143, 28, -13, 85, 20
     Low: 0
