@@ -11,7 +11,7 @@ class MergeSort {
         }
 
         int mid = left + (right - left) / 2;
-        
+
         mergeSort(arr, temp, left, mid);
         mergeSort(arr, temp, mid + 1, right);
 
@@ -43,10 +43,10 @@ class MergeSort {
 
     public static void main(String[] args) {
         MergeSort object = new MergeSort();
-        int[] array = { 12, 43, 93, 13, 23, 59, 19, 10, -16, 53, 90, 143, 28, -13, 85, 20, 73, 89 };
-        object.sort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + (i == array.length - 1 ? "" : ", "));
+        int[] arr = { 12, 43, 93, 13, 23, 59, 19, 10, -16, 53, 90, 143, 28, -13, 85, 20, 73, 89 };
+        object.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + (i == arr.length - 1 ? "" : ", "));
         }
     }
 }
