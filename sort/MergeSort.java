@@ -1,6 +1,6 @@
 class MergeSort {
 
-    public void sort(int[] arr) {
+    private void sort(int[] arr) {
         int[] temp = new int[arr.length];
         mergeSort(arr, temp, 0, arr.length - 1);
     }
